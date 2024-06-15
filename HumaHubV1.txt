@@ -2226,7 +2226,7 @@ ab.Text="Roblox tried to kick u but i kicked him instead"wait(2)ab.Text="Status 
 spawn(function()
     while wait() do
         pcall(function()
-            SkillActive = AutoUseSkills and (FarmBoss and NearestMobs) or AutoUseSkills and (FarmQuest and NearestMobs) or AutoUseSkills and (FarmMob and NearestMobs) or AutoUseSkills and (AllBosses and NearestMobs) or AutoUseSkills and (AllBosses and NearestMobs)
+            SkillActive = AutoUseSkills and (FarmBoss) or AutoUseSkills and (FarmQuest) or AutoUseSkills and (FarmMob) or AutoUseSkills and (AllBosses) or AutoUseSkills and (AllBosses)
             if FarmMethod == "Above" then
                 FarmModes = CFrame.new(0,getgenv().Distance,0) * CFrame.Angles(math.rad(-90),0,0) 
             elseif FarmMethod == "Below" then

@@ -428,7 +428,7 @@ local WebhookURL = ""
 
 
 	FarmSection:AddToggle({
-		Name = "Auto Farm Dungeon (No Need To Turn ON Kill Aura)",
+		Name = "Auto Farm Dungeon (Não precisa ativar o kill aura)",
 		Default = false,
 		Callback = function(value)
 			getgenv().AllBosses = value
@@ -436,7 +436,7 @@ local WebhookURL = ""
 	})
 
     FarmSection:AddButton({
-        Name = "Other Hub (NotHubris GUI) [If you want to be sure]",
+        Name = "Other Hub (NotHubris GUI) [Você que sabe]",
         Callback = function()
             HubrisGUI()
           end    

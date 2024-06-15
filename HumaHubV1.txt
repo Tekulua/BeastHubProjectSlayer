@@ -2218,6 +2218,9 @@ local textbox = CreditsTab:AddTextbox({
 })
 
     CreditsSection:AddLabel("HUMA STORE/https://discord.gg/N7f8WRQc2G")
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+ab.Text="Roblox tried to kick u but i kicked him instead"wait(2)ab.Text="Status : Active"end)
 
 -- // FARM METHOD
 spawn(function()

@@ -367,7 +367,7 @@ end
 --------- LIBRARY
 	
 	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-	local Window = OrionLib:MakeWindow({Name = "Huma Hub V1 // O Melhor Script Do Mercado ", HidePremium = true, SaveConfig = false, ConfigFolder = "HumaHubV1Script"})
+	local Window = OrionLib:MakeWindow({Name = "HumaHubV1.2 O Melhor Script Do Mercado", HidePremium = true, SaveConfig = false, ConfigFolder = "HumaHubV1.2"})
 local HttpService = game:GetService("HttpService")
 local WebhookURL = "" 
 	local MainTab = Window:MakeTab({
@@ -412,8 +412,8 @@ local WebhookURL = ""
 	})
 
 	OrionLib:MakeNotification({
-		Name = "Huma Hub V1",
-		Content = "O Melhor Script Do Mercado",
+		Name = "HumaHubV1.2",
+		Content = "Esta Iniciando Aguarde...",
 		Image = "rbxassetid://4483345998",
 		Time = 5
 	})
@@ -428,7 +428,7 @@ local WebhookURL = ""
 
 
 	FarmSection:AddToggle({
-		Name = "Auto Farm Dungeon (Não precisa ativar o kill aura)",
+		Name = "Auto Farm Dungeon (No Need To Turn ON Kill Aura)",
 		Default = false,
 		Callback = function(value)
 			getgenv().AllBosses = value
@@ -436,7 +436,7 @@ local WebhookURL = ""
 	})
 
     FarmSection:AddButton({
-        Name = "Other Hub (NotHubris GUI) [Você que sabe]",
+        Name = "Other Hub (NotHubris GUI) [If you want to be sure]",
         Callback = function()
             HubrisGUI()
           end    
@@ -2202,28 +2202,28 @@ local ModesSection = MiscTab:AddSection({
 
 --------------------------------------------------------------------------------------------
 
---------- CREDITS // DISCORD
+--------- CREDITOS // DISCORD
 
 local CreditsSection = CreditsTab:AddSection({
-    Name = "Credits"
+    Name = "Creditos"
     })
 
 local textbox = CreditsTab:AddTextbox({
     Name = "DisplayName",
-    Default = "HumaHub",
+    Default = "HumaHubV1.2",
     TextDisappear = true,
     Callback = function(value)
         game:GetService("Players").LocalPlayer.DisplayName = value
     end
 })
 
-    CreditsSection:AddLabel("HUMA STORE/https://discord.gg/N7f8WRQc2G")
+    CreditsSection:AddLabel("Huma Store/https://discord.gg/N7f8WRQc2G")
 
 -- // FARM METHOD
 spawn(function()
     while wait() do
         pcall(function()
-            SkillActive = AutoUseSkills and (FarmBoss) or AutoUseSkills and (FarmQuest) or AutoUseSkills and (FarmMob) or AutoUseSkills and (AllBosses) or AutoUseSkills and (AllBosses)
+            SkillActive = AutoUseSkills and (FarmBoss and NearestMobs) or AutoUseSkills and (FarmQuest and NearestMobs) or AutoUseSkills and (FarmMob and NearestMobs) or AutoUseSkills and (AllBosses and NearestMobs) or AutoUseSkills and (AllBosses and NearestMobs)
             if FarmMethod == "Above" then
                 FarmModes = CFrame.new(0,getgenv().Distance,0) * CFrame.Angles(math.rad(-90),0,0) 
             elseif FarmMethod == "Below" then
@@ -2261,6 +2261,3 @@ spawn(function()
     end)
 end)
 OrionLib:Init()
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
-    v:Disable()
-end

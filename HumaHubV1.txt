@@ -2219,6 +2219,17 @@ local textbox = CreditsTab:AddTextbox({
 
     CreditsSection:AddLabel("Huma Store/https://discord.gg/N7f8WRQc2G")
 
+-- // ANTI AFK
+
+local bb = game:GetService('VirtualUser')
+game:GetService('Players').LocalPlayer.Idled:connect(function()
+    bb:CaptureController()
+    bb:ClickButton2(Vector2.new())
+    ab.Text = "You went idle and ROBLOX tried to kick you but we reflected it!"
+    wait(2)
+    ab.Text = "Script Re-Enabled"
+end)
+
 -- // FARM METHOD
 spawn(function()
     while wait() do
@@ -2242,10 +2253,9 @@ spawn(function()
             end
         end)
     end
-	end)
+end)
 
 -- // NO CLIP
-
 spawn(function()
     game:GetService("RunService").Stepped:Connect(function()
         if getgenv().AllBosses or TPtoLocation or TPtoTrainer or getgenv().AllBosses or FarmBoss then
@@ -2260,4 +2270,5 @@ spawn(function()
         end
     end)
 end)
+
 OrionLib:Init()

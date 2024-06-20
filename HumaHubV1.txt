@@ -15,19 +15,19 @@ local UIS = game:GetService("UserInputService")
         local client = game:GetService("Players").LocalPlayer
         local Plr = game:GetService("Players").LocalPlayer
         local Data = game:GetService("ReplicatedStorage")["Player_Data"][game.Players.LocalPlayer.Name]
-        
+
         local function pressKey(key)
             VIM:SendKeyEvent(true, key, false, game)
             wait()
             VIM:SendKeyEvent(false, key, false, game)
         end
-        
+
         local function GetHuman()
             local h = LP.Character
             h = h and (h:FindFirstChild("Humanoid") or h:FindFirstChildWhichIsA("Humanoid"))
             return h or workspace.CurrentCamera.CameraSubject
         end
-        
+
         local GramxProjectFloat = tostring(math.random(0, 100000))
         local TweenFloatVelocity = Vector3.new(0,0,0)
         function CreateTweenFloat()
@@ -37,8 +37,8 @@ local UIS = game:GetService("UserInputService")
             BV.MaxForce = Vector3.new(100000, 100000, 100000)
             BV.Velocity = TweenFloatVelocity
         end
-        
-        
+
+
         local function GetDistance(Endpoint)
             if typeof(Endpoint) == "Instance" then
             Endpoint = Vector3.new(Endpoint.Position.X, game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y, Endpoint.Position.Z)
@@ -48,8 +48,8 @@ local UIS = game:GetService("UserInputService")
             local Magnitude = (Endpoint - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
             return Magnitude
         end
-        
-        
+
+
         function Tween(Endpoint)
             if typeof(Endpoint) == "Instance" then
             Endpoint = Endpoint.CFrame
@@ -91,14 +91,14 @@ local UIS = game:GetService("UserInputService")
         function BeDemon()
             local Players = game:GetService("Players")
             local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        
+
             -- Get the LocalPlayer
             local localPlayer = Players.LocalPlayer
-        
+
             -- Set the Race value for the LocalPlayer
             ReplicatedStorage.Player_Data[localPlayer.Name].Race.Value = 3
         end
-        
+
         function SoundGodMode()
             _G.godmode = true
                     while _G.godmode do
@@ -108,59 +108,59 @@ local UIS = game:GetService("UserInputService")
                         [3] = "sound_breathing_smoke_screen",
                         [4] = 1
                     }
-                    
+
                     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                     wait(1)
                     end
         end
-    
+
         function BeSlayer()
             local Players = game:GetService("Players")
             local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        
+
             -- Get the LocalPlayer
             local localPlayer = Players.LocalPlayer
-        
+
             -- Set the Race value for the LocalPlayer
             ReplicatedStorage.Player_Data[localPlayer.Name].Race.Value = 2
         end
-        
+
         function BeHuman()
             local Players = game:GetService("Players")
             local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        
+
             -- Get the LocalPlayer
             local localPlayer = Players.LocalPlayer
-        
+
             -- Set the Race value for the LocalPlayer
             ReplicatedStorage.Player_Data[localPlayer.Name].Race.Value = 1
         end
-        
+
         function RemoveDMG()
             local part  =  game:GetService("StarterPlayer").StarterPlayerScripts.Client_Modules.Modules.Extra.Damage_Text
-        
+
             local part1 =  game:GetService("ReplicatedStorage").Assets.Extras.Damage_Text
-        
+
             local part2 = game:GetService("Players").LocalPlayer.PlayerScripts.Client_Modules.Modules.Extra.Damage_Text
-        
+
             local COINS = game:GetService("ReplicatedStorage").Assets.Extras.Coin
-        
+
             local PARTICLES = game:GetService("ReplicatedStorage").Assets.Particles.Parts
-        
+
             part:Destroy()
-        
+
             part1:Destroy()
-        
+
             part2:Destroy()
-            
+
             COINS:Destroy()
-        
+
             PARTICLES:Destroy()
         end
 
         function TitleBuff()
             local folderPath = game:GetService("Players").LocalPlayer.Player_Titles_List
-        
+
             -- Loop through each child in the folder
             for _, child in ipairs(folderPath:GetChildren()) do
             if child:IsA("IntValue") then
@@ -168,12 +168,12 @@ local UIS = game:GetService("UserInputService")
            end
         end
         end
-        
+
 function SpinDemonArt()
     local args = {
         [1] = "check_can_spin_demon_art"
     }
-    
+
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S_"):InvokeServer(unpack(args))    
 end
 
@@ -195,7 +195,7 @@ function EnableCHATLOGS()
             local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
             local instance = (_G.chatSpyInstance or 0) + 1
             _G.chatSpyInstance = instance
-    
+
             local function onChatted(p, msg)
                 if _G.chatSpyInstance == instance then
                     if p == player and msg:lower():sub(1, 6) == "/e spy" then
@@ -224,7 +224,7 @@ function EnableCHATLOGS()
                     end
                 end
             end
-    
+
             for _, p in ipairs(Players:GetPlayers()) do
                 p.Chatted:Connect(function(msg)
                     onChatted(p, msg)
@@ -242,7 +242,7 @@ function EnableCHATLOGS()
             local chatFrame = player.PlayerGui.Chat.Frame
             chatFrame.ChatChannelParentFrame.Visible = true
             chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position + UDim2.new(UDim.new(), chatFrame.ChatChannelParentFrame.Size.Y)
-    
+
     end
 
         local function SkillBind(bind)
@@ -253,7 +253,7 @@ function EnableCHATLOGS()
                 wait(.2)
             end)
         end
-        
+
         function Hop()
             local PlaceID = game.PlaceId
             local AllIDs = {}
@@ -315,7 +315,7 @@ function EnableCHATLOGS()
             end
             Teleport()
         end
-        
+
 --------- SERVICES // KA
 
 local function attack(method)
@@ -348,7 +348,7 @@ local function attack(method)
 	wait()
     game:GetService("ReplicatedStorage").Remotes.To_Server.Handle_Initiate_S:FireServer(method, client, client.Character, client.Character.HumanoidRootPart, client.Character.Humanoid, math.huge, "ground_slash")
 end
-        
+
         local attackMethods = {
             ["Combat"] = 'fist_combat',
             ["Sword"] = 'Sword_Combat_Slash',
@@ -356,7 +356,7 @@ end
             ["Claw"] = 'claw_Combat_Slash',
             ["Fans"] = 'fans_combat_slash'
         }
-        
+
         if game.ReplicatedStorage:FindFirstChild("Remotes"):FindFirstChild("getclientping") then 
             game.ReplicatedStorage:FindFirstChild("Remotes"):FindFirstChild("getclientping").OnClientInvoke = function() 
                 task.wait(5)
@@ -365,9 +365,9 @@ end
         end 
 
 --------- LIBRARY
-	
+
 	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-	local Window = OrionLib:MakeWindow({Name = "Huma Hub V1 // O Melhor Script Do Mercado ", HidePremium = true, SaveConfig = false, ConfigFolder = "HumaHubV1Script"})
+	local Window = OrionLib:MakeWindow({Name = "HumaHubV1.2 O Melhor Script Do Mercado", HidePremium = true, SaveConfig = false, ConfigFolder = "HumaHubV1.2"})
 local HttpService = game:GetService("HttpService")
 local WebhookURL = "" 
 	local MainTab = Window:MakeTab({
@@ -412,8 +412,8 @@ local WebhookURL = ""
 	})
 
 	OrionLib:MakeNotification({
-		Name = "Huma Hub V1",
-		Content = "O Melhor Script Do Mercado",
+		Name = "HumaHubV1.2",
+		Content = "Esta Iniciando Aguarde...",
 		Image = "rbxassetid://4483345998",
 		Time = 5
 	})
@@ -428,7 +428,7 @@ local WebhookURL = ""
 
 
 	FarmSection:AddToggle({
-		Name = "Auto Farm Dungeon (Não precisa ativar o kill aura)",
+		Name = "Auto Farm Dungeon (No Need To Turn ON Kill Aura)",
 		Default = false,
 		Callback = function(value)
 			getgenv().AllBosses = value
@@ -436,7 +436,7 @@ local WebhookURL = ""
 	})
 
     FarmSection:AddButton({
-        Name = "Other Hub (NotHubris GUI) [Você que sabe]",
+        Name = "Other Hub (NotHubris GUI) [If you want to be sure]",
         Callback = function()
             HubrisGUI()
           end    
@@ -446,13 +446,13 @@ local WebhookURL = ""
     local UserInputService = game:GetService("UserInputService")
     local ContextActionService = game:GetService("ContextActionService")
     local mouseEnabled = true
-    
+
     -- Function to disable the mouse clicks
     local function DisableMouseClicks()
         mouseEnabled = false
         ContextActionService:BindAction("DisableMouseClicks", function() end, false, Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2)
     end
-    
+
     -- Function to enable the mouse clicks
     local function EnableMouseClicks()
         mouseEnabled = true
@@ -485,7 +485,7 @@ local WebhookURL = ""
         Default = false,
         Callback = function(value)
             local firing = value -- Update the firing state based on the toggle value
-    
+
             if firing then -- Start the loop only if firing is true
                 while firing do -- Loop while firing is true
                     local Handle_Initiate_S_ = game.ReplicatedStorage.Remotes.To_Server.Handle_Initiate_S_
@@ -501,7 +501,7 @@ local WebhookURL = ""
         Default = false,
         Callback = function(state)
             local running = state -- Update the running state
-    
+
             if running then -- Start the loop only if running is true
                 while running do -- Loop while running is true
                     local success, error = pcall(function()
@@ -512,18 +512,18 @@ local WebhookURL = ""
                             end
                         end
                     end)
-    
+
                     if not success then
                         warn("An error occurred:", error)
                     end
-    
+
                     -- Add a delay between iterations to prevent excessive server load
                     wait(0.1) -- Adjust the delay time as desired
                 end
             end
         end    
     })
-    
+
 local running = false -- Variable to track the state
 
 FarmSection:AddToggle({
@@ -878,7 +878,7 @@ FarmSection:AddToggle({
 
 
 	-- // KILL AURA - FARM
-	
+
 	task.spawn(function()
             while task.wait() do
                 pcall(function()
@@ -890,13 +890,13 @@ FarmSection:AddToggle({
                 end)
             end
         end)
-        
-        
+
+
         local function GetNearestBoss()
-        
+
             local Bosses = game:GetService("Workspace").Mobs:GetDescendants()
             local BossesTable = {}
-        
+
             for i,v in pairs(Bosses) do
                 if v:IsA("Model") and v:FindFirstChild("Humanoid") then
                     if v.Humanoid.Health > 0 then
@@ -904,10 +904,10 @@ FarmSection:AddToggle({
                     end
                 end
             end
-        
+
             local NearestBoss = nil
             local NearestBossDistance = math.huge
-        
+
             for i,v in pairs(BossesTable) do
                 local Distance = GetDistance(v:GetModelCFrame() * FarmModes)
                 if Distance < NearestBossDistance then
@@ -915,24 +915,24 @@ FarmSection:AddToggle({
                     NearestBossDistance = Distance
                 end
             end
-        
+
             return NearestBoss
         end
 
 	-- // AUTO ALL BOSSES - FARM
-	
+
 	spawn(function()
 		while task.wait() do
 			pcall(function()
 				if getgenv().AllBosses or getgenv().AllBosses then
-	
+
 					if not LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
 						antifall3 = Instance.new("BodyVelocity", LP.Character.HumanoidRootPart)
 						antifall3.Velocity = Vector3.new(0, 0, 0)
 						antifall3.MaxForce = Vector3.new(9e9, 9e9, 9e9)
 					elseif LP.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then
 						local v = GetNearestBoss()
-						
+
 								if v then
 									repeat task.wait()                                      
 										if GetDistance(v:GetModelCFrame() * FarmModes) < 25 and GetDistance(v:GetModelCFrame() * FarmModes) < 150 then
@@ -962,9 +962,9 @@ FarmSection:AddToggle({
 			end)
 		end
 	end)
-	
+
 	-- // AUTO COLLECT CHESTS - FARM
-	
+
 	spawn(function()
 		while task.wait() do
 			if AutoCollectChest then
@@ -981,7 +981,7 @@ FarmSection:AddToggle({
 			end
 		end
 	end)
-	
+
     spawn(function()
         while task.wait() do
             if AutoCollectChestv2 then
@@ -994,7 +994,7 @@ FarmSection:AddToggle({
                                 local args = {
                                     [1] = drop.Name
                                 }
-    
+
                                 v.Add_To_Inventory:InvokeServer(unpack(args))
                                 if #v.Drops:GetChildren() == 0 then
                                     v:Destroy()
@@ -1069,7 +1069,7 @@ spawn(function()
 end)
 
 	-- // AUTO BLOCK - FARM
-	
+
 	spawn(function()
 		while task.wait() do
 			if getgenv().AutoBlock then
@@ -1077,7 +1077,7 @@ end)
 			end
 		end
 	end)
-	
+
     --------- SETTINGS // METHODS
 
     local AutoSkills = AutoSkill:AddSection({
@@ -1155,7 +1155,7 @@ end)
     })
 
     -- // AUTO USE SKILLS - SKILLS
-        
+
     spawn(function()
         while task.wait() do
         pcall(function()
@@ -1171,8 +1171,8 @@ end)
         end)
         end
     end)
-    
-    
+
+
     spawn(function()
         while task.wait() do
         pcall(function()
@@ -1188,7 +1188,7 @@ end)
         end)
         end
     end)
-    
+
     spawn(function()
         while task.wait() do
         pcall(function()
@@ -1204,7 +1204,7 @@ end)
         end)
         end
     end)
-    
+
     spawn(function()
         while task.wait() do
         pcall(function()
@@ -1220,7 +1220,7 @@ end)
         end)
         end
     end)
-    
+
     spawn(function()
         while task.wait() do
         pcall(function()
@@ -1236,7 +1236,7 @@ end)
         end)
         end
     end)
-    
+
     spawn(function()
         while task.wait() do
         pcall(function()
@@ -1254,7 +1254,7 @@ end)
     end)
 
 	-- // AUTO COLLECT ORB - FARM
-	
+
     spawn(function()
         while true do
             if StaminaRegen then
@@ -1269,7 +1269,7 @@ end)
             task.wait()
         end
     end)
-    
+
     spawn(function()
         while true do
             if HealthRegen then
@@ -1362,7 +1362,7 @@ end)
 
 
 	-- // AUTO DESTROY ORB 
-	
+
     spawn(function()
         while true do
             if StaminaRegenDestroy then
@@ -1401,7 +1401,7 @@ end)
             wait(1) 
         end
     end)
-    
+
     spawn(function()
         while true do
             if DoublePointsDestroy then
@@ -1473,7 +1473,7 @@ end)
             [3] = "scythe_asteroid_reap",
             [4] = 1
         }
-        
+
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
         wait(0.5)
         end
@@ -1486,7 +1486,7 @@ end)
                 [3] = "scythe_asteroid_reap",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.5)
                 end
@@ -1513,7 +1513,7 @@ end)
             [3] = "akaza_bda_compass_needle",
             [4] = 1
         }
-        
+
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
         wait(0.1)
         end
@@ -1526,7 +1526,7 @@ end)
                 [3] = "akaza_bda_compass_needle",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.1)
                 end
@@ -1549,7 +1549,7 @@ end)
             [3] = "dream_bda_flesh_monster",
             [4] = 1
         }
-        
+
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
         wait(0.1)
         end
@@ -1562,7 +1562,7 @@ end)
                 [3] = "dream_bda_flesh_monster",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.1)
                 end
@@ -1585,7 +1585,7 @@ end)
             [3] = "ice_demon_art_bodhisatva",
             [4] = 1
         }
-        
+
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
         wait(0.1)
         end
@@ -1598,7 +1598,7 @@ end)
                 [3] = "ice_demon_art_bodhisatva",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.1)
                 end
@@ -1621,7 +1621,7 @@ end)
             [3] = "explosive_demon_art_blood_burst",
             [4] = 1
         }
-        
+
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
         wait(0.1)
         end
@@ -1634,7 +1634,7 @@ end)
                 [3] = "explosive_demon_art_blood_burst",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.1)
                 end
@@ -1661,7 +1661,7 @@ end)
                 [3] = "sound_breathing_smoke_screen",
                 [4] = 1
                 }
-        
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
             wait(0.1)
                 end
@@ -1674,7 +1674,7 @@ end)
                 [3] = "sound_breathing_smoke_screen",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.1)
                 end
@@ -1697,7 +1697,7 @@ end)
                 [3] = "flame_breathing_flaming_eruption",
                 [4] = 1
                 }
-        
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
             wait(0.1)
                 end
@@ -1710,7 +1710,7 @@ end)
                 [3] = "flame_breathing_flaming_eruption",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.1)
                 end
@@ -1733,7 +1733,7 @@ end)
                 [3] = "Beast_breathing_devouring_slash",
                 [4] = 1
                 }
-        
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
             wait(0.5)
                 end
@@ -1746,7 +1746,7 @@ end)
                 [3] = "Beast_breathing_devouring_slash",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.5)
                 end
@@ -1769,7 +1769,7 @@ end)
                 [3] = "insect_breathing_dance_of_the_centipede",
                 [4] = 1
                 }
-        
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
             wait(0.5)
                 end
@@ -1782,7 +1782,7 @@ end)
                 [3] = "insect_breathing_dance_of_the_centipede",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.5)
                 end
@@ -1805,7 +1805,7 @@ end)
                 [3] = "Wind_breathing_black_wind_mountain_mist",
                 [4] = 1
                 }
-        
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
             wait(0.5)
                 end
@@ -1818,7 +1818,7 @@ end)
                 [3] = "Wind_breathing_black_wind_mountain_mist",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.5)
                 end
@@ -1841,7 +1841,7 @@ end)
                 [3] = "Water_fall_basin",
                 [4] = 1
                 }
-        
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
             wait(0.5)
                 end
@@ -1854,7 +1854,7 @@ end)
                 [3] = "Water_fall_basin",
                 [4] = 1
                 }
-                
+
                 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("To_Server"):WaitForChild("Handle_Initiate_S"):FireServer(unpack(args))
                 wait(0.5)
                 end
@@ -1983,7 +1983,7 @@ Default = false,
 			end
 		end
 	end)
-	
+
 -- // WALK SPEED - MISCELLANEOUS
 
 	spawn(function()
@@ -2081,7 +2081,7 @@ local RaceSection = SettingsTab:AddSection({
             SpinDemonArt()
           end    
     })
-    
+
     SettingsTab:AddButton({
         Name = "Title Buffs (Visual)",
         Callback = function()
@@ -2091,7 +2091,7 @@ local RaceSection = SettingsTab:AddSection({
 
 --------- MISC // MODES
 
-	
+
 local ModesSection = MiscTab:AddSection({
     Name = "Modes/Buffs"
     })
@@ -2186,13 +2186,13 @@ local ModesSection = MiscTab:AddSection({
     })
 
 --------------------------------------------------------------------------------------------
-		
+
 --------- TELEPORTS
-		
+
 		local TeleportsSection = TeleportsTab:AddSection({
 					Name = "Teleports"
 					})
-		
+
 					TeleportsSection:AddButton({
 						Name = "TP to Shop [Ends Game]",
 						Callback = function()
@@ -2202,28 +2202,39 @@ local ModesSection = MiscTab:AddSection({
 
 --------------------------------------------------------------------------------------------
 
---------- CREDITS // DISCORD
+--------- CREDITOS // DISCORD
 
 local CreditsSection = CreditsTab:AddSection({
-    Name = "Credits"
+    Name = "Creditos"
     })
 
 local textbox = CreditsTab:AddTextbox({
     Name = "DisplayName",
-    Default = "HumaHub",
+    Default = "HumaHubV1.2",
     TextDisappear = true,
     Callback = function(value)
         game:GetService("Players").LocalPlayer.DisplayName = value
     end
 })
 
-    CreditsSection:AddLabel("HUMA STORE/https://discord.gg/N7f8WRQc2G")
+    CreditsSection:AddLabel("Huma Store/https://discord.gg/N7f8WRQc2G")
+
+-- // ANTI AFK
+
+local bb = game:GetService('VirtualUser')
+game:GetService('Players').LocalPlayer.Idled:connect(function()
+    bb:CaptureController()
+    bb:ClickButton2(Vector2.new())
+    ab.Text = "You went idle and ROBLOX tried to kick you but we reflected it!"
+    wait(2)
+    ab.Text = "Script Re-Enabled"
+end)
 
 -- // FARM METHOD
 spawn(function()
     while wait() do
         pcall(function()
-            SkillActive = AutoUseSkills and (FarmBoss) or AutoUseSkills and (FarmQuest) or AutoUseSkills and (FarmMob) or AutoUseSkills and (AllBosses) or AutoUseSkills and (AllBosses)
+            SkillActive = AutoUseSkills and (FarmBoss and NearestMobs) or AutoUseSkills and (FarmQuest and NearestMobs) or AutoUseSkills and (FarmMob and NearestMobs) or AutoUseSkills and (AllBosses and NearestMobs) or AutoUseSkills and (AllBosses and NearestMobs)
             if FarmMethod == "Above" then
                 FarmModes = CFrame.new(0,getgenv().Distance,0) * CFrame.Angles(math.rad(-90),0,0) 
             elseif FarmMethod == "Below" then
@@ -2242,10 +2253,9 @@ spawn(function()
             end
         end)
     end
-	end)
+end)
 
 -- // NO CLIP
-
 spawn(function()
     game:GetService("RunService").Stepped:Connect(function()
         if getgenv().AllBosses or TPtoLocation or TPtoTrainer or getgenv().AllBosses or FarmBoss then
@@ -2260,7 +2270,3 @@ spawn(function()
         end
     end)
 end)
-OrionLib:Init()
-for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
-    v:Disable()
-end

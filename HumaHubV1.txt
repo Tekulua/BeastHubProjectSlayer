@@ -367,7 +367,7 @@ end
 --------- LIBRARY
 
 	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-	local Window = OrionLib:MakeWindow({Name = "HumaHubV1.2 O Melhor Script Do Mercado", HidePremium = true, SaveConfig = false, ConfigFolder = "HumaHubV1.2"})
+	local Window = OrionLib:MakeWindow({Name = "PhoenixHubV.2", HidePremium = true, SaveConfig = false, ConfigFolder = "PhoenixHubV.2"})
 local HttpService = game:GetService("HttpService")
 local WebhookURL = "" 
 	local MainTab = Window:MakeTab({
@@ -412,8 +412,8 @@ local WebhookURL = ""
 	})
 
 	OrionLib:MakeNotification({
-		Name = "HumaHubV1.2",
-		Content = "Esta Iniciando Aguarde...",
+		Name = "PhoenixHubV.2",
+		Content = "loading...",
 		Image = "rbxassetid://4483345998",
 		Time = 5
 	})

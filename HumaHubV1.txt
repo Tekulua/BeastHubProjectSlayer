@@ -367,7 +367,7 @@ end
 --------- LIBRARY
 
 	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Tekulua/asasa/main/ASAS')))()
-	local Window = OrionLib:MakeWindow({Name = "PhoenixHubV.2", HidePremium = true, SaveConfig = false, ConfigFolder = "PhoenixHubV.2"})
+	local Window = OrionLib:MakeWindow({Name = "HumaHubV1", HidePremium = true, SaveConfig = false, ConfigFolder = "HumaHubV1"})
 local HttpService = game:GetService("HttpService")
 local WebhookURL = "" 
 	local MainTab = Window:MakeTab({
@@ -412,7 +412,7 @@ local WebhookURL = ""
 	})
 
 	OrionLib:MakeNotification({
-		Name = "PhoenixHubV.2",
+		Name = "HumaHubV1",
 		Content = "loading...",
 		Image = "rbxassetid://4483345998",
 		Time = 5

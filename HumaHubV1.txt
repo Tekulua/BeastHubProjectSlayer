@@ -371,42 +371,42 @@ end
 local HttpService = game:GetService("HttpService")
 local WebhookURL = "" 
 	local MainTab = Window:MakeTab({
-		Name = "Main",
+		Name = "⦁ Main",
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
     local OrbTab = Window:MakeTab({
-		Name = "Orbs",
+		Name = "⦁ Auto Collect Orbs",
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
     local GodModeTab = Window:MakeTab({
-        Name = "God Modes",
+        Name = "⦁ God Mode",
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
     })
     local AutoSkill = Window:MakeTab({
-        Name = "Auto Skill",
+        Name = "⦁ Auto Attack",
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
     })
 	local SettingsTab = Window:MakeTab({
-		Name = "Others",
+		Name = "⦁ Others",
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
 	local MiscTab = Window:MakeTab({
-		Name = "Misc",
+		Name = "⦁ Miscellaneous",
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
 	local TeleportsTab = Window:MakeTab({
-		Name = "Teleports",
+		Name = "⦁ Teleport",
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
 	local CreditsTab = Window:MakeTab({
-		Name = "Credits",
+		Name = "⦁ Credits",
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
